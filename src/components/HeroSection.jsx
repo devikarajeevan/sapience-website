@@ -27,7 +27,7 @@ const slides = [
     desc: "Are you an expert in your field and passionate about teaching? Join us as a tutor and help shape the future of young minds.",
     button: "Tutor Enquiry",
     image: Slider32,
-    path: "/tutor-enquiry"
+    path: "/tutor-enquiry",
   },
 ];
 
@@ -61,10 +61,10 @@ const HeroSection = () => {
           <img
             src={Logo}
             alt="logo"
-            className="w-[10%] sm:w-[15%] md:w-[20%] lg:w-[15%] xl:w-[10%] h-auto"
+            className="w-[20%] sm:w-[25%] md:w-[20%] lg:w-[15%] xl:w-[10%] h-auto"
           />
         </div>
-        <div className="p-1 pt:0 md:pr-6 md:pl-6 md:pt-0  md:h-[400px]  flex flex-col md:flex-row justify-center items-start md:items-center gap-6">
+        <div className="p-1 pt:0 md:pr-6 md:pl-6 md:pt-0 md:h-[400px] flex flex-col md:flex-row justify-center items-start md:items-center gap-6">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-secondary leading-tight">
               {slides[currentSlide].title}
@@ -75,7 +75,6 @@ const HeroSection = () => {
             {slides[currentSlide].button && (
               <button
                 className="mt-5 px-6 py-4 text-white text-base rounded-full"
-                
                 style={{ backgroundColor: '#0075C2' }}
                 onClick={() => handleClick(slides[currentSlide].path)}
               >
@@ -88,6 +87,7 @@ const HeroSection = () => {
               src={slides[currentSlide].image}
               alt="Slide Image"
               className="h-[450px] object-contain transition-transform duration-1000 ease-in-out"
+              style={{ maxHeight: '450px', width: '100%' }}
             />
           </div>
         </div>
@@ -95,6 +95,5 @@ const HeroSection = () => {
     </div>
   );
 };
-
 
 export default HeroSection;

@@ -50,9 +50,9 @@ const PricingPlan = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 lato-regular">
-      <div className="flex w-full px-8">
-        <Link to="/" className="w-[15%] md:w-[10%]">
-          <img src={Logo} alt="logo" className="w-32 h-32" />
+      <div className="flex items-center justify-between px-8 py-4">
+        <Link to="/" className="flex-shrink-0">
+          <img src={Logo} alt="logo" className="h-16 sm:h-24 md:h-32 object-contain" />
         </Link>
         <h1 className="w-[85%] md:w-[90%] text-3xl md:text-4xl mt-8 font-bold text-center text-gray-900">
           Sapience Edu Connect Pricing Plan
