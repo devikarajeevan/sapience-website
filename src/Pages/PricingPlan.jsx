@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Logo from "../assets/Logo.png";
-import { Link , useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import Logo from '../assets/Logo.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 const PricingPlan = () => {
-  const [selectedPlan, setSelectedPlan] = useState("Rising Star");
+  const [selectedPlan, setSelectedPlan] = useState('Rising Star');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,38 +12,38 @@ const PricingPlan = () => {
 
   const plans = [
     {
-      title: "Starter Scholar",
+      title: 'Starter Scholar',
       features: [
-        "Tech Integrated Tuition",
-        "Career & Mental Guidance",
-        "Evaluation Session",
-        "Mobile App Security",
-        "Fixed Timetable",
-        "Smart Library",
+        'Tech Integrated Tuition',
+        'Career & Mental Guidance',
+        'Evaluation Session',
+        'Mobile App Security',
+        'Fixed Timetable',
+        'Smart Library',
       ],
-      label: "Basic",
-      Button: "Get Started",
-      path:"/book-demo",
+      label: 'Basic',
+      Button: 'Get Started',
+      path: '/book-demo',
     },
     {
-      title: "Rising Star",
+      title: 'Rising Star',
       features: [
-        "All in Starter Scholar",
-        "Smart Lab",
-        "Doubt Clearance",
-        "CCTV Camera",
-        "Revision Session",
+        'All in Starter Scholar',
+        'Smart Lab',
+        'Doubt Clearance',
+        'CCTV Camera',
+        'Revision Session',
       ],
-      label: "Most Popular",
-      Button: "Upgrade Now",
-      path: "/book-demo",
+      label: 'Most Popular',
+      Button: 'Upgrade Now',
+      path: '/book-demo',
     },
     {
-      title: "Prime Scholar",
-      features: ["All in Rising Star", "AR Integrated", "Flexible Timetable"],
-      label: "Premium",
-      Button: "Choose Plan",
-      path: "/book-demo",
+      title: 'Prime Scholar',
+      features: ['All in Rising Star', 'AR Integrated', 'Flexible Timetable'],
+      label: 'Premium',
+      Button: 'Choose Plan',
+      path: '/book-demo',
     },
   ];
 
@@ -67,41 +67,31 @@ const PricingPlan = () => {
             <div
               key={index}
               className={`relative flex flex-col justify-between w-full md:w-1/3 p-6 mx-auto cursor-pointer ${
-                selectedPlan === plan.title
-                  ? "bg-blue-800 text-white"
-                  : "bg-white"
+                selectedPlan === plan.title ? 'bg-blue-800 text-white' : 'bg-white'
               } rounded-xl shadow-xl`}
               style={{
-                transition: "all 0.3s",
-                transform:
-                  selectedPlan === plan.title ? "scale(1.1)" : "scale(1)",
+                transition: 'all 0.3s',
+                transform: selectedPlan === plan.title ? 'scale(1.1)' : 'scale(1)',
                 zIndex: selectedPlan === plan.title ? 1 : 0,
-                border:
-                  selectedPlan === plan.title
-                    ? "2px solid transparent"
-                    : "2px solid #e5e7eb",
+                border: selectedPlan === plan.title ? '2px solid transparent' : '2px solid #e5e7eb',
               }}
               onClick={() => setSelectedPlan(plan.title)}
             >
               <div
                 className={`absolute w-[150px] text-center -top-5 left-4 py-2 text-sm font-bold rounded-lg ${
-                  selectedPlan === plan.title
-                    ? "bg-[#51ccde] text-black"
-                    : "bg-blue-700 text-white"
+                  selectedPlan === plan.title ? 'bg-[#51ccde] text-black' : 'bg-blue-700 text-white'
                 }`}
               >
                 {plan.label}
               </div>
               <div
                 className={`text-center border-b ${
-                  selectedPlan === plan.title ? "border-white" : ""
+                  selectedPlan === plan.title ? 'border-white' : ''
                 } pb-6`}
               >
                 <h2
                   className={`text-2xl font-semibold ${
-                    selectedPlan === plan.title
-                      ? "text-white"
-                      : "text-gray-900"
+                    selectedPlan === plan.title ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   {plan.title}
@@ -110,7 +100,7 @@ const PricingPlan = () => {
               <div className="flex-1 mt-6">
                 <h3
                   className={`text-xl font-semibold ${
-                    selectedPlan === plan.title ? "text-white" : "text-gray-900"
+                    selectedPlan === plan.title ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   Features
@@ -120,9 +110,7 @@ const PricingPlan = () => {
                     <li key={i} className="flex items-center">
                       <svg
                         className={`w-6 h-6 mr-3 ${
-                          selectedPlan === plan.title
-                            ? "text-white"
-                            : "text-blue-500"
+                          selectedPlan === plan.title ? 'text-white' : 'text-blue-500'
                         }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
@@ -141,10 +129,9 @@ const PricingPlan = () => {
               <div className="mt-6">
                 <button
                   className={`w-[220px] py-2 mt-6 ${
-                    selectedPlan === plan.title
-                      ? "bg-[#51ccde] text-black"
-                      : "bg-blue-700 text-white"
-                  } font-bold rounded-lg`} onClick={() => handleButtonClick(plan.path)}
+                    selectedPlan === plan.title ? 'bg-[#51ccde] text-black' : 'bg-blue-700 text-white'
+                  } font-bold rounded-lg`}
+                  onClick={() => handleButtonClick(plan.path)}
                 >
                   {plan.Button}
                 </button>
