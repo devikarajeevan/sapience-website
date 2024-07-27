@@ -57,12 +57,12 @@ const PricingPlan = () => {
         <Link to="/" className="flex-shrink-0">
           <img src={Logo} alt="logo" className="h-16 sm:h-24 md:h-32 object-contain" />
         </Link>
-        <h1 className="w-[85%] md:w-[90%] text-3xl md:text-4xl mt-8 font-bold text-center text-gray-900">
+        <h1 className="w-[85%] md:w-[90%] text-3xl md:text-4xl font-bold text-center text-gray-900">
           Sapience Edu Connect Pricing Plan
         </h1>
       </div>
       <div className="flex items-center justify-center">
-        <div className="flex flex-col lg:flex-row space-y-12 lg:space-y-0 lg:space-x-8 px-6 pb-16 lg:px-12 lg:pb-16 mt-10 w-full max-w-4xl">
+        <div className="flex flex-col lg:flex-row space-y-12 lg:space-y-0 lg:space-x-8 px-6 pb-16 lg:px-12 lg:pb-16 mt-6 w-full max-w-4xl">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -97,7 +97,7 @@ const PricingPlan = () => {
                   {plan.title}
                 </h2>
               </div>
-              <div className="flex-1 mt-6">
+              <div className="flex-1 mt-4">
                 <h3
                   className={`text-xl font-semibold ${
                     selectedPlan === plan.title ? 'text-white' : 'text-gray-900'
@@ -105,7 +105,7 @@ const PricingPlan = () => {
                 >
                   Features
                 </h3>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-2 space-y-2">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <svg
@@ -126,9 +126,9 @@ const PricingPlan = () => {
                   ))}
                 </ul>
               </div>
-              <div className="mt-6">
+              <div className="mt-4">
                 <button
-                  className={`w-[220px] py-2 mt-6 ${
+                  className={`w-[220px] py-2 mt-4 ${
                     selectedPlan === plan.title ? 'bg-[#51ccde] text-black' : 'bg-blue-700 text-white'
                   } font-bold rounded-lg`}
                   onClick={() => handleButtonClick(plan.path)}
