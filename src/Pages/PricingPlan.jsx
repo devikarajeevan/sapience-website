@@ -6,6 +6,9 @@ const PricingPlan = () => {
   const [selectedPlan, setSelectedPlan] = useState("Rising Star");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const plans = [
     {
