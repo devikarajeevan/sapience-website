@@ -5,6 +5,7 @@ import PricingPlan from "./Pages/PricingPlan";
 import "./App.css";
 import FormMeritPage from "./Pages/FormMeritPage";
 import FormTutorPage from "./Pages/FormTutorPage";
+import FormTuitionPage from "./Pages/FormTuitionPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/book-demo" element={<FormMeritPage/>}/>
         <Route path="/tutor-enquiry" element={<FormTutorPage/>}/>
+        <Route path="/tuition-enquiry" element={<FormTuitionPage/>}/>
         <Route path="/pricingplan" element={<PricingPlan />} />
       </Routes>
     </Router>

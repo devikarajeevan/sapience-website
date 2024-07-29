@@ -10,21 +10,21 @@ import Logo from "../assets/Logo.png";
 const slides = [
   {
     title: "One - One Tech Oriented Learning",
-    desc: "Experience personalized, tech-focused learning with one-on-one tuition at your home. Our expert tutors tailor their teaching to meet each student's unique needs and pace.",
+    desc: "Experience personalized, one-on-one learning with our dedicated tutors right at your home. Our expert educators focus on each student's individual needs, providing tailored support to help them excel in their studies. With customized lesson plans and interactive teaching methods, we ensure that students grasp difficult concepts and build confidence. Our approach promotes a deeper understanding of subjects and fosters a love for learning, all within the comfort and convenience of your own home.",
     button: "Book a Demo",
     image: PersonalizedLearning2,
     path: "/book-demo",
   },
   {
     title: "Innovative Tech Courses for Young Minds",
-    desc: "From AI to Robotics, explore our range of tech courses designed to equip students with the skills of the future.",
+    desc: "From AI to Robotics, explore our range of tech courses designed to equip students with the skills of the future. Our carefully crafted curriculum makes complex concepts accessible and engaging, ensuring students develop a solid understanding of emerging technologies. By immersing students in the latest advancements, we prepare them for the rapidly evolving tech landscape and inspire a passion for innovation and problem-solving.",
     button: "Tuition Enquiry",
     image: Slider2,
-    // path: "/tuition-enquiry",
+    path: "/tuition-enquiry",
   },
   {
     title: "Shaping Futures Together",
-    desc: "Are you an expert in your field and passionate about teaching? Join us as a tutor and help shape the future of young minds.",
+    desc: "Are you an expert in your field and passionate about teaching? Join us as a tutor and help shape the future of young minds. You'll have the opportunity to inspire and mentor the next generation of students, sharing your knowledge and experience. Make a meaningful impact on their educational journey and help them achieve their full potential, all while contributing to a supportive and enriching learning environment.",
     button: "Tutor Enquiry",
     image: Slider32,
     path: "/tutor-enquiry",
@@ -33,14 +33,17 @@ const slides = [
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false); // Track whether the slider is paused
   const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+      if (!isPaused) {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+      }
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const nextSlide = () => {
     setCurrentSlide((currentSlide + 1) % slides.length);
@@ -74,9 +77,10 @@ const HeroSection = () => {
             </p>
             {slides[currentSlide].button && (
               <button
-                className="mt-5 px-6 py-4 text-white text-base rounded-full"
-                style={{ backgroundColor: '#0075C2' }}
+                className="mt-5 px-6 py-4 text-white text-base rounded-full bg-[#0075C2] hover:bg-[#0056a0] transition-colors duration-300"
                 onClick={() => handleClick(slides[currentSlide].path)}
+                onMouseEnter={() => setIsPaused(true)} // Pause slider on button hover
+                onMouseLeave={() => setIsPaused(false)} // Resume slider on button leave
               >
                 {slides[currentSlide].button}
               </button>
