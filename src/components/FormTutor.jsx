@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from "../assets/Logo.png";
 import Tutor from "../assets/tutor.png";
-import IconGif from "../assets/reg page.gif"; // Assuming you have a gif icon for each list item
+import IconGif from "../assets/reg page.gif";
 
 const list = [
   {
@@ -37,14 +37,15 @@ const FormTutor = () => {
       <div className='max-w-[1240px] mx-auto grid md:grid-cols-2 gap-3 px-4'>
         <div className='flex items-center justify-center w-full'>
         <div className='w-full md:w-[60%] shadow-xl flex flex-col my-4 rounded-xl hover:scale-105 duration-300 bg-white p-4'>
-          <p className='text-center font-bold text-md text-blue-600 pb-4'>Share your details, Let us connect you</p>
+          <p className='text-center font-bold text-md text-blue-600 pb-4'>Share your details, Let us connect with you</p>
           <form className='flex flex-col space-y-4'>
             <input type="text" placeholder="Name" className="p-2 border border-gray-300 rounded-xl" />
             <input type="email" placeholder="Email ID" className="p-2 border border-gray-300 rounded-xl" />
             <input type="text" placeholder="Contact" className="p-2 border border-gray-300 rounded-xl" />
-            <input type="text" placeholder="Class" className="p-2 border border-gray-300 rounded-xl" />
+            <input type="text" placeholder="Qualifications" className="p-2 border border-gray-300 rounded-xl" />
+            <input type="text" placeholder="Subjects" className="p-2 border border-gray-300 rounded-xl" />
             <input type="text" placeholder="Location" className="p-2 border border-gray-300 rounded-xl" />
-            <button className='bg-blue-700 w-[200px] rounded-3xl font-medium mx-auto px-6 py-3 text-white'>Register</button>
+            <button className='bg-blue-700 w-[200px] rounded-3xl font-medium mx-auto px-6 py-3 text-white'>Apply now</button>
           </form>
           </div>
         </div>
@@ -71,3 +72,105 @@ const FormTutor = () => {
 };
 
 export default FormTutor;
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+
+// const FormTutor = () => {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     contact: '',
+//     qualifications: '',
+//     subjects: '',
+//     location: ''
+//   });
+
+//   const handleFormChange = (e) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value
+//     });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       const response = await axios.post('YOUR_WEB_APP_URL', formData, {
+//         headers: {
+//           'Content-Type': 'application/json'
+//         }
+//       });
+//       alert('Data saved successfully!');
+//     } catch (error) {
+//       console.error('Error saving data:', error);
+//       alert('Failed to save data.');
+//     }
+//   };
+
+//   return (
+//     <div className='w-full bg-primary pb-16'>
+//       <div className='max-w-[1240px] mx-auto grid md:grid-cols-2 gap-3 px-4'>
+//         <div className='flex items-center justify-center w-full'>
+//           <div className='w-full md:w-[60%] shadow-xl flex flex-col my-4 rounded-xl hover:scale-105 duration-300 bg-white p-4'>
+//             <p className='text-center font-bold text-md text-blue-600 pb-4'>Share your details, Let us connect with you</p>
+//             <form className='flex flex-col space-y-4' onSubmit={handleSubmit}>
+//               <input
+//                 type="text"
+//                 name="name"
+//                 placeholder="Name"
+//                 className="p-2 border border-gray-300 rounded-xl"
+//                 value={formData.name}
+//                 onChange={handleFormChange}
+//               />
+//               <input
+//                 type="email"
+//                 name="email"
+//                 placeholder="Email ID"
+//                 className="p-2 border border-gray-300 rounded-xl"
+//                 value={formData.email}
+//                 onChange={handleFormChange}
+//               />
+//               <input
+//                 type="text"
+//                 name="contact"
+//                 placeholder="Contact"
+//                 className="p-2 border border-gray-300 rounded-xl"
+//                 value={formData.contact}
+//                 onChange={handleFormChange}
+//               />
+//               <input
+//                 type="text"
+//                 name="qualifications"
+//                 placeholder="Qualifications"
+//                 className="p-2 border border-gray-300 rounded-xl"
+//                 value={formData.qualifications}
+//                 onChange={handleFormChange}
+//               />
+//               <input
+//                 type="text"
+//                 name="subjects"
+//                 placeholder="Subjects"
+//                 className="p-2 border border-gray-300 rounded-xl"
+//                 value={formData.subjects}
+//                 onChange={handleFormChange}
+//               />
+//               <input
+//                 type="text"
+//                 name="location"
+//                 placeholder="Location"
+//                 className="p-2 border border-gray-300 rounded-xl"
+//                 value={formData.location}
+//                 onChange={handleFormChange}
+//               />
+//               <button className='bg-blue-700 w-[200px] rounded-3xl font-medium mx-auto px-6 py-3 text-white'>Apply now</button>
+//             </form>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default FormTutor;
