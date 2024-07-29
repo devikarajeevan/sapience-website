@@ -4,7 +4,7 @@
   const StorySection = () => {
     return (
        <section className="w-full xl:h-screen relative ">
-          <h2 className="text-2xl text-center font-semibold bg-secondary pb-3 text-white">Our Story: Sidharth's Journey to Quality Education</h2>
+          <h2 className="text-2xl font-semibold text-center bg-secondary pb-1 pt-1 text-white flex items-center justify-center">Our Story: Sidharth's Journey to Quality Education</h2>
         <div className="">
           <video 
             src={OurStory} 

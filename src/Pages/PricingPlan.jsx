@@ -22,8 +22,7 @@ const PricingPlan = () => {
         'Smart Library',
       ],
       label: 'Basic',
-      Button: 'Get Started',
-      path: '/book-demo',
+      Button: 'Choose Plan',
     },
     {
       title: 'Rising Star',
@@ -35,20 +34,18 @@ const PricingPlan = () => {
         'Revision Session',
       ],
       label: 'Most Popular',
-      Button: 'Upgrade Now',
-      path: '/book-demo',
+      Button: 'Choose Plan',
     },
     {
       title: 'Prime Scholar',
       features: ['All in Rising Star', 'AR Integrated', 'Flexible Timetable'],
       label: 'Premium',
       Button: 'Choose Plan',
-      path: '/book-demo',
     },
   ];
 
-  const handleButtonClick = (path) => {
-    navigate(path);
+  const handleButtonClick = (plan) => {
+    navigate('/book-demo', { state: { selectedPlan: plan.title } });
   };
 
   return (
@@ -131,7 +128,7 @@ const PricingPlan = () => {
                   className={`w-[220px] py-2 mt-4 ${
                     selectedPlan === plan.title ? 'bg-[#51ccde] text-black' : 'bg-blue-700 text-white'
                   } font-bold rounded-lg`}
-                  onClick={() => handleButtonClick(plan.path)}
+                  onClick={() => handleButtonClick(plan)}
                 >
                   {plan.Button}
                 </button>
