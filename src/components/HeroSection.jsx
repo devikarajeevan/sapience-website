@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider2 from "../assets/Slider2.svg";
-import Slider3 from "../assets/Slider3.svg";
-import PersonalizedLearning from "../assets/PersonalizedLearning.svg";
 import Slider32 from "../assets/Slider32.svg";
 import PersonalizedLearning2 from "../assets/PersonalizedLearning2.svg";
 import Logo from "../assets/Logo.png";
@@ -45,21 +43,13 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  const nextSlide = () => {
-    setCurrentSlide((currentSlide + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
-  };
-
   const handleClick = (path) => {
     navigate(path);
   };
 
   return (
     <div className="hero-container pb-2 md:pb-20">
-      <section className="mx-auto hero-section xl:h-screen">
+      <section className="relative mx-auto hero-section xl:h-screen">
         <div className="bg-primary flex items-center px-4 md:px-8">
           <img
             src={Logo}
@@ -77,7 +67,7 @@ const HeroSection = () => {
             </p>
             {slides[currentSlide].button && (
               <button
-                className="mt-5 px-6 py-4 text-white text-base rounded-full bg-[#0075C2] hover:bg-[#0056a0] transition-colors duration-300"
+                className="mt-5 px-6 py-3 text-white text-base rounded-full bg-[#0075C2] hover:bg-[#0056a0] shadow-lg hover:shadow-xl transition-colors duration-300"
                 onClick={() => handleClick(slides[currentSlide].path)}
                 onMouseEnter={() => setIsPaused(true)} // Pause slider on button hover
                 onMouseLeave={() => setIsPaused(false)} // Resume slider on button leave
@@ -94,6 +84,16 @@ const HeroSection = () => {
               style={{ maxHeight: '450px', width: '100%' }}
             />
           </div>
+        </div>
+        {/* Navigation Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {slides.map((_, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3 rounded-full cursor-pointer ${index === currentSlide ? 'bg-[#0075C2]' : 'bg-gray-300'}`}
+              onClick={() => setCurrentSlide(index)}
+            ></div>
+          ))}
         </div>
       </section>
     </div>
