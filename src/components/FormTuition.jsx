@@ -227,7 +227,10 @@ const FormTuition = () => {
           <div className='w-full flex flex-col space-y-4'>
             {list.map((item, index) => (
               <div key={index} className='w-full flex items-center space-x-2'>
-                <img src={IconGif} className='w-[53px] h-[75px]' alt="Icon" />
+                <div className=' min-w-fit h-[75px]'>
+                  <img src={IconGif} className=' h-[75px] w-fit' alt="Icon" />
+                </div>
+                
                 <div className='flex flex-col space-y-2'>
                   <h1 className='text-blue-800 font-bold text-md'>{item.heading}</h1>
                   <p className='text-gray-500 text-xs'>{item.subheading}</p>

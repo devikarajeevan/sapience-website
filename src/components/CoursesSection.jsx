@@ -75,7 +75,7 @@ const CoursesSection = () => {
           {courses.map((course, index) => (
             <div
               key={course.id}
-              className={`bg-white p-6 rounded-lg border-b shadow-lg flex flex-col-reverse  md:flex-row items-center md:justify-center ${index === 1 ? 'md:flex-row-reverse' : ''}`}
+              className={`bg-white p-6 rounded-lg border-b shadow-lg flex flex-col-reverse md:flex-row items-center md:justify-center ${index === 1 ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Centered Content */}
               <div className={`w-full md:w-1/2 flex flex-col items-center ${index === 1 ? 'md:items-center' : ''}`}>
@@ -101,6 +101,7 @@ const CoursesSection = () => {
                     </div>
                   ))}
                 </div>
+                
                 <div className="w-full flex justify-center">
                   <button
                     className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg justify-items-center"
