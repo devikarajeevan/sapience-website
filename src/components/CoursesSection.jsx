@@ -79,27 +79,30 @@ const CoursesSection = () => {
               {/* Centered Content */}
               <div className={`w-full md:w-1/2 flex flex-col items-center ${index === 1 ? 'md:items-center' : ''}`}>
                 <img src={course.image} alt={course.title} className="w-full h-auto max-w-[300px] md:max-w-[400px] mb-4" />
-                <p className="text-gray-700 text-lg text-center mb-2">{course.leftParagraph}</p>
+                <p className="text-gray-700 text-lg text-center mb-4 px-10 py-4">{course.leftParagraph}</p> {/* Added padding */}
               </div>
 
               {/* Right Section: Title, Subtitle, and Bullet Points */}
-              <div className={`w-full md:w-1/2 flex flex-col items-center md:items-start ${index === 1 ? 'md:items-center' : ''}`}>
+              <div className={`w-full md:w-1/2 flex flex-col items-center ${index === 1 ? 'md:items-center' : ''}`}>
                 <h3 className="text-2xl font-bold text-[#004aad] mb-2 text-center md:text-left">{course.rightTitle}</h3>
                 <h4 className="text-xl font-semibold text-[#35a0cd] mb-4 text-center md:text-left">{course.rightSubTitle}</h4>
-                
-                <div className="grid grid-cols-2 gap-4 text-gray-700 text-base justify-center">
+
+                <div className="grid grid-cols-1 justify-center md:grid-cols-2 gap-4 text-gray-700 text-base p-2">
                   {course.rightPoints.map((point, i) => (
-                    <div key={i} className="flex items-center">
-                      <svg className="w-5 h-5 mr-2 text-[#0d4fb1]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-10.707a1 1 0 00-1.414-1.414L9 9.586 7.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                      </svg>
+                    <div key={i} className="flex items-start">
+                      <div>
+                        <svg className="w-4 h-4 mr-2 text-[#0d4fb1]" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-10.707a1 1 0 00-1.414-1.414L9 9.586 7.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                        </svg>
+                      </div>
+
                       {point}
                     </div>
                   ))}
                 </div>
-                <div className={`w-full flex justify-${index === 0 ? 'end' : 'start'} mt-4`}> {/* Align buttons */}
-                  <button 
-                    className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg"
+                <div className={`w-full flex justify-center justify-${index === 0 ? 'end' : 'start'} mt-4`}> {/* Align buttons */}
+                  <button
+                    className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg justify-items-center"
                     onClick={handleExploreClick}
                   >
                     Explore
@@ -112,27 +115,25 @@ const CoursesSection = () => {
         <div className="mt-12 bg-[#51ccde] bg-opacity-20 p-6 rounded-lg shadow-lg flex flex-col items-center">
           <h2 className="text-3xl font-bold text-[#004aad] mb-2 text-center">Future Innovators Workshops</h2>
           <h3 className="text-2xl font-semibold text-[#35a0cd] mb-4 text-center">(For All)</h3>
-          <p className="text-base text-black text-center mb-8">
+          <p className="text-base text-black text-center mb-8 px-10 py-4">
             Explore the exciting world of technology with our Future Innovators Workshops. Open to all irrespective of age, these hands-on workshops cover a range of Industry 4.0 technologies. Designed to spark creativity and innovation, our workshops provide practical skills and knowledge to prepare students for the future.
-          </p>
-          <div className="flex flex-col md:flex-row w-full max-w-4xl">
+          </p> {/* Added padding */}
+          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl">
             {/* Bullet Points */}
-            <ul className="list-disc list-inside text-black text-base space-y-2 w-full md:w-1/2">
+            <ul className="list-disc list-inside text-black text-base space-y-2 w-full md:w-8/12  px-10 py-2"> {/* Added padding */}
               {workshops.map((workshop, i) => (
-                <li key={i}>{workshop}</li>
+                <li key={i} className=''>{workshop}</li>
               ))}
             </ul>
-            {/* Image and Explore Button */}
-            <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
-              <img src={Image2} alt="Future Innovators Workshops" className="w-full h-auto max-w-[400px] mb-4" />
-              <div className="w-full flex justify-start mt-4"> {/* Align button */}
-                <button 
-                  className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg"
-                  onClick={handleExploreClick}
-                >
-                  Explore
-                </button>
-              </div>
+            {/* Centered Button */}
+            <div className="w-full md:w-1/2 flex flex-col items-center justify-center mt-8">
+              <img src={Image1} alt="Future Innovators Workshops" className="w-full h-auto max-w-[400px] mb-4" />
+              <button
+                className="px-6 py-4 bg-secondary text-white font-bold rounded-full text-lg"
+                onClick={handleExploreClick}
+              >
+                Explore
+              </button>
             </div>
           </div>
         </div>

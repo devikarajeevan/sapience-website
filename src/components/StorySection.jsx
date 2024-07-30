@@ -100,7 +100,7 @@
   
   const StorySection = () => {
     return (
-      <section className="w-full lg:h-screen flex flex-col bg-[#fcfcfc]">
+      <section className="w-full lg:h-full flex flex-col gap-4 bg-[#fcfcfc]">
         <div className="bg-secondary text-white text-2xl font-semibold text-center py-3 px-1">
           Our Story: Sidharth's Journey to Quality Education
         </div>
@@ -120,11 +120,11 @@
               <video 
                 src={OurStory} 
                 alt="Our Story" 
-                className="w-full lg:w-[85%] h-auto lg:h-full object-contain rounded-2xl border-4 border-gray-300" 
+                className="w-full lg:w-[85%] h-auto lg:h-[300px] object-contain rounded-2xl border-4 border-gray-300" 
                 controls 
               />
             </div>
-            <div className="bg-[#004aad] w-full lg:w-[70%] h-auto lg:h-[35%] flex flex-col items-center justify-center text-white rounded-2xl p-4 lg:p-5">
+            <div className="bg-[#004aad] w-full lg:w-[70%] h-auto lg:h-[300px] flex flex-col items-center justify-center text-white rounded-2xl p-4 lg:p-5">
               <p className="text-lg lg:text-xl text-center">
                 "Ready to take the next step?<br /> Contact us today to learn more about our services and enroll."
               </p>
