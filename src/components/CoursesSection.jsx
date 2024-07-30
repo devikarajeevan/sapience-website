@@ -65,8 +65,8 @@ const CoursesSection = () => {
   };
 
   return (
-    <section className="bg-blue-100">
-      <div className='bg-blue-100 py-9 mt-12 md:mt-16 lg:mt-28'>
+    <section className="bg-white">
+      <div className='bg-white py-9 mt-4 md:mt-8 lg:mt-12'>
         <div className="bg-secondary text-white text-3xl font-semibold text-center py-2">
           Courses Offered
         </div>
@@ -109,7 +109,7 @@ const CoursesSection = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 bg-[#51ccde] bg-opacity-0 p-6 rounded-lg shadow-lg flex flex-col items-center">
+        <div className="mt-12 bg-[#51ccde] bg-opacity-20 p-6 rounded-lg shadow-lg flex flex-col items-center">
           <h2 className="text-3xl font-bold text-[#004aad] mb-2 text-center">Future Innovators Workshops</h2>
           <h3 className="text-2xl font-semibold text-[#35a0cd] mb-4 text-center">(For All)</h3>
           <p className="text-base text-black text-center mb-8">

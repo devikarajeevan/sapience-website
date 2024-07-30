@@ -48,7 +48,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="hero-container pb-2 md:pb-20">
+    <div className="hero-container pb-2 md:pb-10">
       <section className="relative mx-auto hero-section xl:h-screen">
         <div className="bg-primary flex items-center px-4 md:px-8">
           <img
