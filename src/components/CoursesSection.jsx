@@ -45,14 +45,12 @@
 
 // export default CoursesSection;
 
-
-
 import React, { useState } from 'react';
 import Image1 from '../assets/Image1.svg';
 import Image2 from '../assets/Image2.svg';
-import Popup from './Popup';
 import ReactCardFlip from 'react-card-flip';
-import './Activities.css'; // Ensure this contains the styles for .course-card and .card-back
+import './Courses.css';
+import { useNavigate } from "react-router-dom";
 
 const FlippingCard = ({ frontContent, backContent, isFlipped, flipCard }) => {
   return (
@@ -68,14 +66,48 @@ const FlippingCard = ({ frontContent, backContent, isFlipped, flipCard }) => {
 };
 
 const courses = [
-  { id: 1, title: 'CBSE / ICSE', subtitle: 'V - IX Std', image: Image1 },
-  { id: 2, title: 'CBSE / ICSE', subtitle: 'X Std', image: Image1 },
-  { id: 3, title: 'Workshops', subtitle: 'Anyone', image: Image2 },
+  {
+    id: 1,
+    title: 'CBSE / ICSE',
+    subtitle: 'V - IX Std',
+    image: Image1,
+    details: [
+      'English, Maths, Science, Social Science, ICT',
+      'Materials: According to School Textbook (ICSE)'
+    ]
+  },
+  {
+    id: 2,
+    title: 'CBSE / ICSE',
+    subtitle: 'X Std',
+    image: Image1,
+    details: [
+      'All subjects on demand'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Workshops',
+    subtitle: 'Anyone',
+    image: Image2,
+    details: [
+      'Introduction to Cyber Security and Ethical Hacking',
+      'Introduction to AI/ML',
+      'Introduction to Data Science',
+      'Ethical Hacking Essentials',
+      'Introduction to IoT',
+      'Introduction to Robotics',
+      'Introduction to Network Security',
+      'What is the dark web?',
+      'How to save ourselves from Hacking',
+      'What is cloud computing?'
+    ]
+  }
 ];
 
 const CoursesSection = () => {
   const [flippedStates, setFlippedStates] = useState(new Array(courses.length).fill(false));
-  const [selectedCourse, setSelectedCourse] = useState(null);
+  const navigate = useNavigate();
 
   const flipCard = (index) => {
     const newFlippedStates = [...flippedStates];
@@ -83,12 +115,8 @@ const CoursesSection = () => {
     setFlippedStates(newFlippedStates);
   };
 
-  const handleViewMoreClick = (course) => {
-    setSelectedCourse(course);
-  };
-
-  const handleClosePopup = () => {
-    setSelectedCourse(null);
+  const handleExploreClick = () => {
+    navigate("/pricingplan");
   };
 
   return (
@@ -104,11 +132,23 @@ const CoursesSection = () => {
               frontContent={
                 <div className="w-full h-full flex flex-col justify-center items-center" style={{ backgroundImage: `url(${course.image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
                   <h3 className="text-lg font-bold text-[#358cc5]">{course.title}</h3>
+                  <p className="mt-2 text-[#358cc5] font-bold">{course.subtitle}</p>
                 </div>
               }
               backContent={
-                <div className="w-full h-full flex flex-col justify-center items-center bg-white">
-                  <p className="mt-2 text-[#358cc5] font-bold">{course.subtitle}</p>
+                <div className="w-full h-full flex flex-col justify-center items-center bg-[#094ca9] p-3">
+                  <p className="text-white font-bold text-lg">DETAILS</p>
+                  <ul className="list-disc text-white text-left">
+                    {course.details.map((detail, i) => (
+                      <li key={i} className="flex items-center text-white text-sm">
+                        <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-10.707a1 1 0 00-1.414-1.414L9 9.586 7.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                        </svg>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                  <button className="absolute bottom-2 px-3 py-1 bg-secondary text-xs text-white rounded-full" onClick={handleExploreClick}>Explore</button>
                 </div>
               }
               isFlipped={flippedStates[index]}
@@ -117,7 +157,6 @@ const CoursesSection = () => {
           ))}
         </div>
       </div>
-      {selectedCourse && <Popup course={selectedCourse} onClose={handleClosePopup} />}
     </section>
   );
 };

@@ -40,11 +40,11 @@ const Footer = () => {
               </div>
               <span>+1 (234) 567-890</span>
             </a>
-            <a href="mailto:hello@reallygreatsite.com" className="flex items-center mb-2 text-base">
+            <a href="info@sapienceconnect.com" className="flex items-center mb-2 text-base">
               <div className="w-5 h-5 mr-2">
                 <img src={Mail} alt="Mail Icon" />
               </div>
-              <span>hello@reallygreatsite.com</span>
+              <span>info@sapienceconnect.com</span>
             </a>
           </div>
           <div className="flex items-start">
