@@ -5,6 +5,7 @@ import Slider32 from "../assets/Slider32.svg";
 import PersonalizedLearning2 from "../assets/PersonalizedLearning2.svg";
 import Logo from "../assets/Logo.png";
 
+
 const slides = [
   {
     title: "One - One Tech Oriented Learning",

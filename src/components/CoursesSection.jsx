@@ -1,6 +1,7 @@
 import React from 'react';
-import Image1 from '../assets/girl.gif';
-import Image2 from '../assets/Image2.svg'; // Ensure the path is correct
+import Image2 from '../assets/girlgrp.gif';
+import Image1 from '../assets/studyboy.gif'; 
+import girl from "../assets/girl.gif";// Ensure the path is correct
 import { useNavigate } from "react-router-dom";
 
 const courses = [
@@ -27,7 +28,7 @@ const courses = [
     id: 2,
     title: 'CBSE / ICSE',
     subtitle: 'X Std',
-    image: Image1,
+    image: Image2,
     rightTitle: 'Excellence Accelerator',
     rightSubTitle: '(CBSE/ICSE 10th Standard)',
     rightPoints: [
@@ -74,7 +75,7 @@ const CoursesSection = () => {
           {courses.map((course, index) => (
             <div
               key={course.id}
-              className={`bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center md:justify-center ${index === 1 ? 'md:flex-row-reverse' : ''}`}
+              className={`bg-white p-6 rounded-lg shadow-lg flex flex-col-reverse md:flex-row items-center md:justify-center ${index === 1 ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Centered Content */}
               <div className={`w-full md:w-1/2 flex flex-col items-center ${index === 1 ? 'md:items-center' : ''}`}>
@@ -126,7 +127,7 @@ const CoursesSection = () => {
               ))}
             </ul>
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
-              <img src={Image2} alt="Future Innovators Workshops" className="w-full h-auto max-w-[400px] mb-4" />
+              <img src={girl} alt="Future Innovators Workshops" className="w-full h-auto max-w-[400px] mb-4" />
               <div className="w-full flex justify-center mt-4"> {/* Align button */}
                 <button 
                   className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg"
