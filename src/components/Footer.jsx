@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Logo from "../assets/Logo.png";
 import Phone from "../assets/phoneicon.png";
 import Mail from "../assets/mailicon.png";
 import Loc from "../assets/locicon.png";
-import {
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = forwardRef((props, ref) => {
   return (
-    <div className='max-w-[1240px] mx-auto py-14 px-14 grid lg:grid-cols-3 gap-8 text-gray-300 text-center lg:text-left'>
+    <div
+      ref={ref}
+      className='max-w-[1240px] mx-auto py-14 px-14 grid lg:grid-cols-3 gap-8 text-gray-300 text-center lg:text-left'
+    >
       <div className="flex flex-col items-center lg:items-start">
         <img src={Logo} alt="Logo" className="mb-2 w-[150px] h-[150px]" />
         <p className='text-[color:#0075C2] md:max-w-[90%] lg:max-w-[70%] text-center lg:text-left ml-0 mr-0'>
@@ -40,7 +40,7 @@ const Footer = () => {
               </div>
               <span>+1 (234) 567-890</span>
             </a>
-            <a href="info@sapienceconnect.com" className="flex items-center mb-2 text-base">
+            <a href="mailto:info@sapienceconnect.com" className="flex items-center mb-2 text-base">
               <div className="w-5 h-5 mr-2">
                 <img src={Mail} alt="Mail Icon" />
               </div>
@@ -78,6 +78,6 @@ const Footer = () => {
       </div>
     </div>
   );
-}
+});
 
 export default Footer;
