@@ -97,7 +97,7 @@ const CoursesSection = () => {
                     </div>
                   ))}
                 </div>
-                <div className={`w-full flex justify-${index === 0 ? 'end' : 'start'} mt-4`}> {/* Align buttons */}
+                <div className="w-full flex">
                   <button 
                     className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg"
                     onClick={handleExploreClick}
@@ -122,10 +122,9 @@ const CoursesSection = () => {
                 <li key={i}>{workshop}</li>
               ))}
             </ul>
-            {/* Image and Explore Button */}
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
               <img src={Image2} alt="Future Innovators Workshops" className="w-full h-auto max-w-[400px] mb-4" />
-              <div className="w-full flex justify-start mt-4"> {/* Align button */}
+              <div className="w-full flex justify-center mt-4"> {/* Align button */}
                 <button 
                   className="px-4 py-2 bg-secondary text-white font-bold rounded-full text-lg"
                   onClick={handleExploreClick}
