@@ -346,7 +346,9 @@ const FormTutor = () => {
           <div className='w-full flex flex-col space-y-6'>
             {list.map((item, index) => (
               <div key={index} className='w-full flex items-start space-x-4'>
-                <img src={IconGif} className='w-[60px] h-[80px]' alt="Icon" />
+                <div className=' min-w-fit h-[75px]'>
+                  <img src={IconGif} className=' h-[75px] w-fit' alt="Icon" />
+                </div>
                 <div className='flex flex-col'>
                   <h2 className='text-blue-800 font-bold text-lg'>{item.heading}</h2>
                   <p className='text-gray-500 text-sm'>{item.subheading}</p>

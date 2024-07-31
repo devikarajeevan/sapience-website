@@ -5,10 +5,11 @@ import Slider32 from "../assets/Slider32.svg";
 import PersonalizedLearning2 from "../assets/PersonalizedLearning2.svg";
 import Logo from "../assets/Logo.png";
 
+
 const slides = [
   {
     title: "One - One Tech Oriented Learning",
-    desc: "Experience personalized, one-on-one learning with our dedicated tutors right at your home. Our expert educators focus on each student's individual needs, providing tailored support to help them excel in their studies. With customized lesson plans and interactive teaching methods, we ensure that students grasp difficult concepts and build confidence. Our approach promotes a deeper understanding of subjects and fosters a love for learning, all within the comfort and convenience of your own home.",
+    desc: "Experience personalized, one-on-one learning with our dedicated tutors right at your home. Our expert educators focus on each student's individual needs, providing tailored support to help them excel in their studies. With customized lesson plans and interactive teaching methods, we ensure that students grasp difficult concepts and build confidence.",
     button: "Book a Demo",
     image: PersonalizedLearning2,
     path: "/book-demo",
@@ -48,16 +49,16 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="hero-container pb-2 md:pb-10">
+    <div className="hero-container pb-2 md:pb-10 xl:min-h-screen">
       <section className="relative mx-auto hero-section xl:h-screen">
-        <div className="bg-primary flex items-center px-4 md:px-8">
+        <div className="bg-primary flex items-center px-4 pb-10 md:px-8">
           <img
             src={Logo}
             alt="logo"
             className="w-[20%] sm:w-[25%] md:w-[20%] lg:w-[15%] xl:w-[10%] h-auto"
           />
         </div>
-        <div className="p-1 pt:0 md:pr-6 md:pl-6 md:pt-0 md:h-[400px] flex flex-col md:flex-row justify-center items-start md:items-center gap-6">
+        <div className="p-1 py-4 pt:0 md:pr-6 md:pl-6 md:pt-0 md:h-[400px] flex flex-col md:flex-row justify-center items-start md:items-center gap-6">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-secondary leading-tight">
               {slides[currentSlide].title}

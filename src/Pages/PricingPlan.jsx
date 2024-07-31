@@ -49,8 +49,8 @@ const PricingPlan = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 lato-regular">
-      <div className="flex items-center justify-between px-8 py-4">
+    <div className="h-auto bg-gray-100 lato-regular">
+      <div className="flex items-center justify-between px-8">
         <Link to="/" className="flex-shrink-0">
           <img src={Logo} alt="logo" className="h-16 sm:h-24 md:h-32 object-contain" />
         </Link>
@@ -59,7 +59,7 @@ const PricingPlan = () => {
         </h1>
       </div>
       <div className="flex items-center justify-center">
-        <div className="flex flex-col lg:flex-row space-y-12 lg:space-y-0 lg:space-x-8 px-6 pb-16 lg:px-12 lg:pb-16 mt-6 w-full max-w-4xl">
+        <div className="flex flex-col lg:flex-row space-y-12 lg:space-y-0 lg:space-x-8 px-6 pb-16 lg:px-12 lg:pb-16 mt-10 w-full max-w-4xl">
           {plans.map((plan, index) => (
             <div
               key={index}
